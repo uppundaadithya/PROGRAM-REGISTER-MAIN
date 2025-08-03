@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to bottom, rgb(244, 248, 242), rgb(255, 244, 223));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    height: 100vh;
+    overflow: auto;
+    margin-bottom: 0;
+}
+
+.inputarea1 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.inputarea1 h1 {
+    font-size: 1.8rem;
+    margin: 5px 0;
+}
+
+#DR {
+    border-bottom: solid rgb(125, 18, 18) 2px;
+    width: 60%;
+}
+
+img {
+    border-radius: 50px;
+    height: 80px;
+    width: 80px;
+}
+
+.inputarea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(54, 237, 149, 0.129);
+    padding: 40px 20px;
+    margin: 20px;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 20px;
+    gap: 15px;
+    transition: 2s ease-in-out;
+}
+
+h2 {
+    color: #630101;
+    padding: 8px;
+    border-radius: 23px;
+    background-color: rgba(255, 242, 226, 0.336);
+    border: solid #e00b0b4f 0.5px;
+}
+
+span {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-weight: 500;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+input {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    color: #343030;
+    margin-top: 5px;
+    width: 100%;
+    transition: 0.2s ease-out;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+input:hover {
+    outline: solid wheat 0.4px;
+}
+
+.inputarea2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+button {
+    border: none;
+    background: rgb(139, 6, 6);
+    color: white;
+    padding: 10px 0;
+    border-radius: 22px;
+    cursor: pointer;
+    transition: 0.2s ease-out;
+    margin: 5px;
+    font-size: 14px;
+    width: 80%;
+}
+
+button:hover {
+    border-radius: 25px;
+    width: 100%;
+}
+
+.set {
+    background-color: rgb(255, 52, 52);
+    width: 100px;
+}
+
+.footer {
+    background: #6e0b1f;
+    color: #fff;
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 14px;
+    width: 100%;
+    box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.1);
+    margin: 0;
+    margin-top: 50px;
+}
+
+.footer p {
+    margin: 4px 0;
+    font-weight: 500;
+}
+
+.inputarea5 {
+    display: flex;
+    flex-direction: column;
+    background: rgba(54, 237, 149, 0.129);
+    padding: 40px 20px;
+    align-items: center;
+    margin: 20px;
+    width: 90%;
+    border-radius: 20px;
+    gap: 15px;
+    transition: 2s ease-in-out;
+}
+
+.btn.btn-danger {
+    width: auto;
+}
+
+#backbtn {
+    width: fit-content;
+    padding: 10px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(54, 237, 149, 0.129);
+    padding: 40px 20px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 20px;
+    gap: 15px;
+    transition: 2s ease-in-out;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+    .inputarea {
+        padding: 15px;
+    }
+
+    .inputarea1 h1 {
+        font-size: 1.3rem;
+    }
+
+    input {
+        font-size: 1rem;
+    }
+
+    span {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    table {
+        width: 100%;
+        padding: 10px 0 10px 30px;
+        overflow-x: auto;
+    }
+}

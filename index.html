@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Program Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <style>
+    button {
+      background-color: #630101;
+      color: aliceblue;
+      width: 100px;
+      outline: none;
+      border: none;
+      margin: 5px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      border-radius: 20px;
+      padding: 5px;
+      cursor: pointer;
+      padding: 10px;
+      transition: 1s ease-in-out;
+    }
+    button:hover{
+         width: 110px;
+         box-shadow: rgb(195, 98, 98) 1px 0px 40px;
+          transition: 0.4s ease-in-out;
+    }
+  </style>
+  <div class="inputarea1">
+    <img src="download.jpg" alt="">
+    <h1>DR.B.B. HEGDE FIRST GRADE COLLEGE</h1>
+    <h1 id="DR"></h1>
+    <h1>Kundapura</h1>
+  </div>
+<a  id="btt" href="approve.html"><button> ✓ Approved Program List</button></a>
+  <form class="inputarea" id="programForm">
+    <h2>Program Register</h2><br>
+
+    <span>NAME OF PROGRAM: <input name="programName" type="text" required></span>
+    <span>DATE: <input name="date" type="date" required></span>
+    <span>CO-ORDINATOR NAME: <input name="coordinator" type="text" required></span>
+    <span>PHONE: <input name="phone" type="tel" maxlength="10" required></span>
+    <span>RESOURCE PERSON NAME: <input name="resourcePerson" type="text" required></span>
+    <span>VENUE: <input name="venue" type="text" value="Auditorium" readonly required></span>
+
+    <br>
+    <span class="inputarea2">
+      <button type="submit">✓ Submit</button>
+      <button type="reset" class="set">✕ Reset</button>
+    </span>
+  </form>
+
+  <footer class="footer">
+    <p>🧑🏽‍💻 Developer: Adithya (BCA)</p>
+  </footer>
+
+  <!-- Firebase Script -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBK-FCsvl2TgfuqLNg9RV80Fodnc0wXeps",
+      authDomain: "program-38391.firebaseapp.com",
+      projectId: "program-38391",
+      storageBucket: "program-38391.appspot.com",
+      messagingSenderId: "631653067819",
+      appId: "1:631653067819:web:9660a94a555d8ac17c4e6e",
+      measurementId: "G-H7WJ5NL8SN"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const form = document.getElementById("programForm");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const data = {
+        programName: form.programName.value,
+        date: form.date.value,
+        coordinator: form.coordinator.value,
+        phone: form.phone.value,
+        resourcePerson: form.resourcePerson.value,
+        venue: form.venue.value,
+      };
+
+      await addDoc(collection(db, "programs"), data);
+      alert("Program registered successfully!");
+      form.reset();
+    });
+  </script>
+</body>
+</html>
